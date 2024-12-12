@@ -397,10 +397,10 @@ select number from reservation join user on reservation.user_id = user.id where 
   <img src="image/2만원 이상인 결제 조회.png"  style="zoom:76%;" align="center"/>
 </div>
 <div align="center">
-  <img src="image/일반쿼리문 실행시.png"  style="zoom:76%;" align="center"/>
+  <img src="image/일반쿼리문 실행시.PNG"  style="zoom:76%;" align="center"/>
 </div>
 <div align="center">
-  <img src="image/row수.png"  style="zoom:76%;" align="center"/>
+  <img src="image/row수.PNG"  style="zoom:76%;" align="center"/>
 </div>
 
 <br>
@@ -408,16 +408,16 @@ select number from reservation join user on reservation.user_id = user.id where 
 [인덱스 쿼리문 실행시 row 49319 실행시간 0.016 sec]
 
 <div align="center">
-  <img src="image/인덱스.png"  style="zoom:76%;" align="center"/>
+  <img src="image/인덱스.PNG"  style="zoom:76%;" align="center"/>
 </div>
 <div align="center">
-  <img src="image/인덱스쿼리.png"  style="zoom:76%;" align="center"/>
+  <img src="image/인덱스쿼리.PNG"  style="zoom:76%;" align="center"/>
 </div>
 <div align="center">
-  <img src="image/인덱스쿼리로우.png"  style="zoom:76%;" align="center"/>
+  <img src="image/인덱스쿼리로우.PNG"  style="zoom:76%;" align="center"/>
 </div>
 <div align="center">
-  <img src="image/인덱스쿼리실행시간.png"  style="zoom:76%;" align="center"/>
+  <img src="image/인덱스쿼리실행시간.PNG"  style="zoom:76%;" align="center"/>
 </div>
 
 [결과: 성능 rows: 50% 향상
