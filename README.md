@@ -1,7 +1,7 @@
 <h1 align="center">데브옵스 프로젝트 👍</h1>
 
 <div align="center">
-  <img src="로고.png"  style="zoom:76%;" align="center"/>
+  <img src="image/로고.png"  style="zoom:76%;" align="center"/>
 </div>
 
 >##  한화시스템 BEYOND  Ah Four - QUE DOC 
