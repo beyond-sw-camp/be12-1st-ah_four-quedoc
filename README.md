@@ -1,13 +1,13 @@
 <h1 align="center" >QUE DOC  </h1>
 
 <div align="center">
-  <img src="image/로고.png"  style="zoom:76%;" align="center"/>
+  <img src="image/icon.png"  style="zoom:76%;" align="center"/>
 </div>
 
 <br>
 <br>
 
->#  🔥 팀 Ah Four 
+<h1 align="center" >🔥 팀 Ah Four 🔥 </h1>
 
 
 <br>
@@ -774,52 +774,86 @@ update reservation set name = 'newname' where idx=idx;
 
 ## 💡 성능 개선  
 
-<details> <summary><b>성능 개선 사례<b> </summary>
-<div align="center">
-  <img src="image/유저의 예약 한병원보기.png"  style="zoom:76%;" align="center"/>
-</div>
-<div align="center">
-  <img src="image/유저예약병원시간.png"  style="zoom:76%;" align="center"/>
-</div>
-<br>
-[ 유저의 병원조회 인덱싱 사용후 성능개선 확인]
-<div align="center">
-  <img src="image/인덱싱.png"  style="zoom:76%;" align="center"/>
-</div>
-<div align="center">
-  <img src="image/인덱싱 시간.png"  style="zoom:76%;" align="center"/>
-</div>
-<br>
-[일반쿼리문 실행시 row 98639
-실행시간 0.110 sec]
+<details> <summary><b>성능 개선 사례<b> </summary> <br>
 
-<div align="center">
-  <img src="image/2만원 이상인 결제 조회.png"  style="zoom:76%;" align="center"/>
+<details><summary><b>INDEX 적용 사례_1<b> </summary> <br>
+
+### INDEX 적용 이유
+
+> user의 id를 이용한 SELECT문이 많음을 확인 <br>
+> explain으로 탐색 rosw를 확인<br>
+> 매번 전체 테이블을 탐색하는 것을 발견<br>
+> user의 id를 index로 등록하여 탐색 rows를 줄이고자함
+
+<br>
+<div>
+  <img src="image/유저의 예약 한병원보기.png"  style="zoom:76%;" />
 </div>
-<div align="center">
-  <img src="image/일반쿼리문 실행시.PNG"  style="zoom:76%;" align="center"/>
+<div >
+  <img src="image/유저예약병원시간.png"  style="zoom:76%;" />
 </div>
-<div align="center">
-  <img src="image/row수.PNG"  style="zoom:76%;" align="center"/>
-</div>
+
+> 일반 쿼리문 실행시실행시간 1.063 sec
 
 <br>
 
-[인덱스 쿼리문 실행시 row 49319 실행시간 0.016 sec]
+<div >
+  <img src="image/인덱싱.png"  style="zoom:76%;" />
+</div>
+<div >
+  <img src="image/인덱싱 시간.png"  style="zoom:76%;" />
+</div>
+<br>
 
-<div align="center">
-  <img src="image/인덱스.PNG"  style="zoom:76%;" align="center"/>
+> 일반 쿼리문 실행시실행시간 0.813 sec
+
+> 결과: 실행시간 약 0.2초 단축
+</details>
+<details><summary><b>INDEX 적용 사례_2<b> </summary> <br>
+
+### INDEX 적용 이유
+
+> 결제금액으로 조회하는 SELECT문이 많음을 확인 <br>
+> explain으로 탐색 rosw를 확인<br>
+> 전체 테이블을 탐색하는 것을 발견<br>
+> payment의 payment_amount를 index로 등록하여 탐색 rows를 줄이고자함
+
+<div>
+  <img src="image/2만원 이상인 결제 조회.png"  style="zoom:76%;" />
 </div>
-<div align="center">
-  <img src="image/인덱스쿼리.PNG"  style="zoom:76%;" align="center"/>
+<div >
+  <img src="image/일반쿼리문 실행시.PNG"  style="zoom:76%;" />
 </div>
-<div align="center">
-  <img src="image/인덱스쿼리로우.PNG"  style="zoom:76%;" align="center"/>
-</div>
-<div align="center">
-  <img src="image/인덱스쿼리실행시간.PNG"  style="zoom:76%;" align="center"/>
+<div>
+  <img src="image/row수.PNG"  style="zoom:76%;" />
 </div>
 
-[결과: 성능 rows: 50% 향상
-실행시간 약 0.1초 단축]
+<br>
+
+>  일반쿼리문 실행시 row 98639
+실행시간 0.110 sec
+
+
+<div >
+  <img src="image/인덱스.PNG"  style="zoom:76%;" />
+</div>
+<div >
+  <img src="image/인덱스쿼리.PNG"  style="zoom:76%;" />
+</div>
+<div >
+  <img src="image/인덱스쿼리로우.PNG"  style="zoom:76%;" />
+</div>
+<div >
+  <img src="image/인덱스쿼리실행시간.PNG"  style="zoom:76%;" />
+</div>
+<br>
+
+
+> 인덱스 쿼리문 실행시 row 49319 실행시간 0.016 sec
+
+> 결과: 성능 rows: 50% 향상
+실행시간 약 0.1초 단축
+
+</details>
+</details>
 </details>
