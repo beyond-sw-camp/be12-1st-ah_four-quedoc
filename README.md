@@ -1,4 +1,4 @@
-<h1 align="center">데브옵스 프로젝트 👍</h1>
+<h1 align="center">기반기술 프로젝트 👍</h1>
 
 <div align="center">
   <img src="image/로고.png"  style="zoom:76%;" align="center"/>
